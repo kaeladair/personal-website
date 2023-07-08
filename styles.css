@@ -86,7 +86,7 @@ nav {
     background-color: transparent;
 }
 .anim.navbar .bg {
-    perspective: 600px;    
+    perspective: 40px;    
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -95,12 +95,12 @@ nav {
 }
 
 .disc {
-    width: 140px;
+    width: 100px;
     height: 50px;
     border-radius: 50%;
     background: transparent;
-    border: 1px solid rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
+    border: 2px solid white;
+    color: white;
     font-size: 15px;
     transform: rotateY(0deg);
     animation: rotateAnimation 5s linear infinite;
