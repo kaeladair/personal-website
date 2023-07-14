@@ -8,22 +8,12 @@
 
 body {
     margin: 0;
-    height: 100vh;
+    height: 96vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: url("dove/Dove\ Cursor.cur"), auto;
-}
-
-body::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px; /* adjust to your liking */
-    background: linear-gradient(transparent, #6d01fe); /* adjust color to your liking */
 }
 
 h1 {
@@ -57,67 +47,90 @@ h1 {
     background-color: transparent;
 }
 
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    padding: 15px;
-    box-sizing: border-box;
-    border-bottom: solid 1px rgb(30, 30, 30);
-}
-
-.navbar h1 {
+ul {
+    list-style-type: none;
     margin: 0;
-    font-size: 22px;
-    padding-top: 5px;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    border: 1px solid rgb(21, 21, 21);
+    font-size: 20px;
+    box-shadow: rgb(23, 23, 23) 0px -7px 29px 0px;
 }
-
-nav {
-    display: flex;
-    gap: 20px;
+  
+li {
+    float: left;
 }
-
-/* New CSS styles */
-.bg{
-    background-color: transparent;
-}
-.anim.navbar .bg {
-    perspective: 40px;    
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 100px;
-}
-
-.disc {
-    width: 100px;
-    height: 50px;
-    border-radius: 50%;
-    background: transparent;
-    border: 2px solid white;
+  
+li a {
+    display: block;
     color: white;
-    font-size: 15px;
-    transform: rotateY(0deg);
-    animation: rotateAnimation 5s linear infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+}
+  
+  /* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
 }
 
-.anim.navbar p {
-    margin-block: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+  /* Add a gray right border to all list items, except the last item (last-child) */
+li {
+    border-right: 1px solid rgb(21, 21, 21);
+}
+  
+li:last-child {
+    border-left: 1px solid rgb(21, 21, 21);
 }
 
-@keyframes rotateAnimation {
-    0% {transform: rotateY(0deg) rotateZ(0deg);}
-    50% {transform: rotateY(180deg) rotateZ(5deg);}
-    100% {transform: rotateY(360deg) rotateZ(0deg);}
+ul {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+  
+#name {
+    float: right;
 }
 
+#name h1 {
+    padding: 10px;
+    border-right: none;
+}
+
+/* Your existing styles remain the same */
+
+@media screen and (max-width: 600px) {
+    /* Stack the list items vertically and center them */
+    li {
+        float: none;
+        text-align: center;
+        border-bottom: 1px solid rgb(21, 21, 21);
+        border-right: none;
+        font-size: 15px;
+    }
+
+    /* Adjust the bottom border for the last list item */
+    li:last-child {
+        border-bottom: none;
+    }
+
+    #name {
+        float: none;
+        justify-content: center;
+    }
+
+    body {
+        height: 70vh;
+    }
+
+    h1 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    #year {
+        font-size: 33px;
+    }
+}
